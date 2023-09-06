@@ -9,6 +9,8 @@ namespace MassTransit.Consumers.RabbitMq.Config
         public static void AddConsumerToRabbitMq(this IRabbitMqBusFactoryConfigurator configurator , IRegistrationContext context)
         {
             configurator.ReceiveEndpoint("exampleMessageQueue" , e=> e.ConfigureConsumer<ExampleMessageConsumer>(context));
+
+            configurator.ReceiveEndpoint("HelloWorldConumer", e => e.ConfigureConsumer<HelloWorldConsumer>(context));
         }
     }
 }

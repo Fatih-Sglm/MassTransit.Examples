@@ -35,6 +35,7 @@ namespace MassTransit.Producers.RabbitMq
 
                 // Send Message to RabbitMq
                 await _bus.Publish(exampleMessage, stoppingToken);
+                await _bus.Publish(new HelloWorldMessage(), stoppingToken);
                 //await _publishEndpoint.Publish(exampleMessage, stoppingToken);
             }
         }
